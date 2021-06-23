@@ -49,12 +49,12 @@ export class WatchExampleComponent implements OnInit, AfterViewChecked {
     console.warn('WatchExampleComponent - ngOnInit');
   }
 
-  ngAfterViewChecked() {
+  ngAfterViewChecked(): void {
     console.warn("WatchExampleComponent - ngAfterViewChecked");
   }
 
   @Watch()
-  changeUnwatchedVar() {    
+  changeUnwatchedVar(): void {    
     this.unwatchedVar += 10;
     // this.cdr.detectChanges();
   }
@@ -87,7 +87,7 @@ export class WatchExampleComponent implements OnInit, AfterViewChecked {
     this.customClass.customClass.foo += this.getRandomLetter();
   }
 
-  getCustomClassString() {
+  getCustomClassString(): string {
     return `
       {
         "foo": ${this.customClass.foo},
@@ -98,7 +98,7 @@ export class WatchExampleComponent implements OnInit, AfterViewChecked {
     `
   }
 
-  onOutsideZoneExampleClick() {
+  onOutsideZoneExampleClick(): void {
     this.router.navigate(['outside-zone-example']);
   }
 

@@ -16,11 +16,11 @@ export class OutsideZoneExampleComponent implements OnInit, AfterViewChecked, Af
   value = 0;
 
   /**
-   * Click event with zone
-   * Click event without zone:
-   *  1. only with runOutsideAngular
-   *  2. fromEvent without bindings
-   *  3. EventManager plugin
+   * Click event inside zone
+   * Click event outside zone:
+   * 1. only with runOutsideAngular
+   * 2. fromEvent without bindings
+   * 3. using EventManager plugin
    */
 
   constructor(
@@ -51,29 +51,29 @@ export class OutsideZoneExampleComponent implements OnInit, AfterViewChecked, Af
   }
 
 
-  increment() {
+  increment(): void {
     this.value++;
     // this.incrementOutsideZone();
   }
 
-  decrement() {
+  decrement(): void {
     this.value--;
     // this.incrementOutsideZone();
   }
 
-  incrementOutsideZone() {
+  incrementOutsideZone(): void {
     this.ngZone.runOutsideAngular(() => {
       this.value++;
     });
   }
 
-  decrementOutsideZone() {
+  decrementOutsideZone(): void {
     this.ngZone.runOutsideAngular(() => {
       this.value--;
     });
   }
 
-  onWatchDecoratorExampleClick() {
+  onWatchDecoratorExampleClick(): void {
     this.router.navigate(['watch-example']);
   }
 }
