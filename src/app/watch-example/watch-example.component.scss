@@ -1,0 +1,26 @@
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.table {
+    display: flex;
+    flex-direction: row;
+    margin-block-start: 2rem;
+    
+    .col {
+        display: flex;
+        flex-direction: column;
+        margin: 0 1rem;
+        justify-content: center;
+    }
+
+    .row {
+        height: 60px;
+        line-height: 30px;
+    }
+
+    button {
+        margin-block-end: .5rem;;
+    }
+}

@@ -1,0 +1,49 @@
+.zone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 70vh;
+
+    &__title {
+        margin-block-end: 1rem;
+    }
+
+    &__value {
+        font-size: 6rem;
+        margin-block-end: 2rem;
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__button {
+        button {
+            width: 12rem;
+            border-radius: 6px;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            transition: background 120ms;
+            cursor: pointer;
+            outline: 0;
+            border: 2px solid lightgray;
+            transition: 100ms;
+
+            &:hover {
+                filter: brightness(0.95);
+            }
+
+            &:active {
+                color: green;
+                border: 2px solid green;
+            }
+        }
+
+        &:first-child {
+            margin-inline-end: 1rem;
+        }
+    }
+}

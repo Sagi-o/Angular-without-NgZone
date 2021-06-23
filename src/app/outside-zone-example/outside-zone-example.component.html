@@ -1,0 +1,31 @@
+<div class="header">
+    <span>
+        Outside Zone Events (NgZone enabled)
+    </span>
+    <button (click)="onWatchDecoratorExampleClick()">
+        @Watch Decorator Example
+    </button>
+</div>
+
+<div class="zone">
+  <div class="zone__title">
+    Value
+  </div>
+  <div class="zone__value">
+    {{ value }}
+  </div>
+
+  <div class="zone__buttons">
+    <div class="zone__button">
+      <!-- .zoneless -->
+      <button #incrementButton (click)="increment()">
+        Increment
+      </button>
+    </div>
+    <div class="zone__button">
+      <button #decrementButton (click)="decrement()">
+        Decrement
+      </button>
+    </div>
+  </div>
+</div>

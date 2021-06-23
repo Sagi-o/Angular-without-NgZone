@@ -1,0 +1,12 @@
+<div class="node">
+    {{ onCdCheck() }}
+    <div class="header">
+        <div class="name" #node>
+            {{ name }}
+        </div>
+    </div>
+    <div class="hor-line"></div>
+    <div class="nodes">
+        <ng-content #component></ng-content>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+<div class="header">
+    <span>
+        @Watch Decorator (NgZone disabled)
+    </span>
+    <button (click)="onOutsideZoneExampleClick()">
+        Outside Zone Example
+    </button>
+</div>
+<div class="table">
+    <div class="col">
+        <div class="row flex-column">
+            <button (click)="changeString()">
+                changeString()
+            </button>
+        </div>
+        <div class="row flex-column">
+            <button (click)="changeNumber()">
+                changeNumber()
+            </button>
+        </div>
+        <div class="row flex-column">
+            <button (click)="changeBoolean()">
+                changeBoolean()
+            </button>
+        </div>
+        <div class="row flex-column">
+            <button (click)="changeArray()">
+                changeArray()
+            </button>
+        </div>
+        <div class="row flex-column">
+            <button (click)="changeObject()">
+                changeObject()
+            </button>
+            <!-- <button (click)="changeObject2()">
+                changeObject2() (bar)
+            </button> -->
+        </div>
+        <div class="row flex-column" (click)="changeCustomClass()">
+            <button>
+                changeCustomClass()
+            </button>
+        </div>
+        <div class="row flex-column" (click)="changeUnwatchedVar()">
+            <button>
+                changeUnwatchedVar()
+            </button>
+        </div>
+    </div>
+    <div class="col">
+        <div class="row">
+            <b>exampleString:</b> {{ exampleString }}
+        </div>
+        <div class="row">
+            <b>exampleNumber:</b> {{ exampleNumber }}
+
+        </div>
+        <div class="row">
+            <b>exampleBoolean:</b> {{ exampleBoolean }}
+        </div>
+        <div class="row">
+            <b>array:</b> {{ array | json }}
+        </div>
+        <div class="row">
+            <b>object:</b> {{ object | json }}
+        </div>
+        <div class="row">
+            <b>customClass:</b> {{ getCustomClassString() }}
+        </div>
+        <div class="row">
+            <b>unwatchedVar:</b> {{ unwatchedVar }}
+        </div>
+    </div>
+</div>

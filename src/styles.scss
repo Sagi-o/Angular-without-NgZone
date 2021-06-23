@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary: #205a81;
+}
+
+body {
+    font-family: 'Montserrat';
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    width: fit-content;
+    border-radius: 3px;
+    font-size: 1rem;
+    transition: 120ms;
+    cursor: pointer;
+    outline: 0;
+    border: 1px solid lightgray;
+    transition: 80ms;
+    padding: .5rem .85rem;
+
+    &:hover {
+        filter: brightness(0.95);
+    }
+
+    &:active {
+        border: 1px solid #5784BA;
+    }
+}
+
+.header {
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    
+    :nth-child(1) {
+        margin-inline-end: auto;
+    }
+}
