@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { interval, Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { Watch } from '../../decorators/watch.decorator';
-import { CustomClass } from '../../model/custom-class.model';
+import { CustomClass } from '../../models/custom-class.model';
 
 @Component({
   selector: 'app-watch-example',
