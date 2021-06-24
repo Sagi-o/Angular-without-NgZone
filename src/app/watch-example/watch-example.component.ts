@@ -56,6 +56,8 @@ export class WatchExampleComponent implements OnInit, AfterViewChecked {
   @Watch()
   changeUnwatchedVar(): void {    
     this.unwatchedVar += 10;
+
+    // Or manually with
     // this.cdr.detectChanges();
   }
 

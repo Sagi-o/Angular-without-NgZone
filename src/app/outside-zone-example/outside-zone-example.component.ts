@@ -17,9 +17,9 @@ export class OutsideZoneExampleComponent implements OnInit, AfterViewChecked, Af
 
   /**
    * Click event inside zone
-   * Click event outside zone:
+   * Click event outside zone ways:
    * 1. only with runOutsideAngular
-   * 2. fromEvent without bindings
+   * 2. fromEvent without zone bindings
    * 3. using EventManager plugin
    */
 
