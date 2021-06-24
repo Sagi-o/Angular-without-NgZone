@@ -7,9 +7,9 @@ import { fromEvent } from 'rxjs';
   selector: 'app-outside-zone-example',
   templateUrl: './outside-zone-example.component.html',
   styleUrls: ['./outside-zone-example.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class OutsideZoneExampleComponent implements OnInit, AfterViewChecked, AfterViewInit {
+export class OutsideZoneExampleComponent implements OnInit, AfterViewInit {
   @ViewChild('incrementButton') incrementButton: ElementRef<HTMLButtonElement>;
   @ViewChild('decrementButton') decrementButton: ElementRef<HTMLButtonElement>;
 
@@ -19,8 +19,8 @@ export class OutsideZoneExampleComponent implements OnInit, AfterViewChecked, Af
    * Click event inside zone
    * Click event outside zone ways:
    * 1. only with runOutsideAngular
-   * 2. fromEvent without zone bindings
-   * 3. using EventManager plugin
+   * 2. use fromEvent without zone bindings
+   * 3. using EventManager plugin (.zoneless)
    */
 
   constructor(
@@ -32,33 +32,23 @@ export class OutsideZoneExampleComponent implements OnInit, AfterViewChecked, Af
     console.warn('OutsideZoneExampleComponent - ngOnInit');
   }
 
-  ngAfterViewChecked(): void {
-    console.warn('OutsideZoneExampleComponent - ngAfterViewChecked');
-  }
-
   ngAfterViewInit(): void {
     // Remove click event listeners from buttons before using
-    // fromEvent(this.incrementButton.nativeElement, 'click').subscribe(
-    //   () => {
-    //     this.incrementOutsideZone();
-    //   }
-    // );
-    // fromEvent(this.decrementButton.nativeElement, 'click').subscribe(
-    //   () => {
-    //     this.decrementOutsideZone();
-    //   }
-    // );
+    this.ngZone.runOutsideAngular(() => {
+      this.setupClickListeners();
+    });
   }
-
 
   increment(): void {
     this.value++;
     // this.incrementOutsideZone();
+    console.log('increment()');
   }
 
   decrement(): void {
     this.value--;
     // this.incrementOutsideZone();
+    console.log('decrement()');
   }
 
   incrementOutsideZone(): void {
@@ -71,6 +61,21 @@ export class OutsideZoneExampleComponent implements OnInit, AfterViewChecked, Af
     this.ngZone.runOutsideAngular(() => {
       this.value--;
     });
+  }
+
+  setupClickListeners(): void {
+    fromEvent(this.incrementButton.nativeElement, 'click').subscribe(
+      () => {                  
+        this.value++;
+        console.log('fromEvent() - increment');        
+      }
+    );
+    fromEvent(this.decrementButton.nativeElement, 'click').subscribe(
+      () => {
+        this.value--;
+        console.log('fromEvent() - decrement');        
+      }
+    );
   }
 
   onWatchDecoratorExampleClick(): void {

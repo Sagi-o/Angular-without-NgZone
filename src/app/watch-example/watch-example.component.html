@@ -46,6 +46,11 @@
                 changeUnwatchedVar()
             </button>
         </div>
+        <div class="row flex-column">
+            <button (click)="startInterval()">
+                startInterval()
+            </button>
+        </div>
     </div>
     <div class="col">
         <div class="row">
@@ -69,6 +74,9 @@
         </div>
         <div class="row">
             <b>unwatchedVar:</b> {{ unwatchedVar }}
+        </div>
+        <div class="row">
+            <b>interval$:</b> {{ interval$ | watch }}
         </div>
     </div>
 </div>

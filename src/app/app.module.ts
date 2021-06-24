@@ -8,6 +8,7 @@ import { NodeComponent } from './tree/node/node.component';
 import { WatchExampleComponent } from './watch-example/watch-example.component';
 import { OutsideZoneExampleComponent } from './outside-zone-example/outside-zone-example.component';
 import { ZonelessEventPluginService } from './services/zoneless-event-plugin.service';
+import { WatchPipe } from './pipes/watch.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ZonelessEventPluginService } from './services/zoneless-event-plugin.ser
     TreeComponent,
     NodeComponent,
     WatchExampleComponent,
-    OutsideZoneExampleComponent
+    OutsideZoneExampleComponent,
+    WatchPipe
   ],
   imports: [
     BrowserModule,

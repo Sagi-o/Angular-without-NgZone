@@ -1,5 +1,7 @@
 import { AfterViewChecked, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { interval, Observable, Subscription } from 'rxjs';
+import { take } from 'rxjs/operators';
 import { Watch } from '../decorators/watch.decorator';
 import { CustomClass } from '../model/custom-class.model';
 
@@ -9,7 +11,7 @@ import { CustomClass } from '../model/custom-class.model';
   styleUrls: ['./watch-example.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class WatchExampleComponent implements OnInit, AfterViewChecked {
+export class WatchExampleComponent implements OnInit {
 
   @Watch()
   exampleString: string = 'abc';
@@ -36,11 +38,14 @@ export class WatchExampleComponent implements OnInit, AfterViewChecked {
 
   unwatchedVar = 0;
 
+  @Watch()
+  interval$: Observable<any>;
+
   /**
    * Run cd with ngZone disabled:
    * 1. The manual way (cdr)
    * 2. The decorator way - explained
-   * 3. types: primitives including objects/classes, methods
+   * 3. types: primitives including objects/classes, methods, observables
    */
 
   constructor(private router: Router, private cdr: ChangeDetectorRef) { }
@@ -49,11 +54,7 @@ export class WatchExampleComponent implements OnInit, AfterViewChecked {
     console.warn('WatchExampleComponent - ngOnInit');
   }
 
-  ngAfterViewChecked(): void {
-    console.warn("WatchExampleComponent - ngAfterViewChecked");
-  }
-
-  @Watch()
+  // @Watch()
   changeUnwatchedVar(): void {    
     this.unwatchedVar += 10;
 
@@ -87,6 +88,10 @@ export class WatchExampleComponent implements OnInit, AfterViewChecked {
 
   changeCustomClass() {
     this.customClass.customClass.foo += this.getRandomLetter();
+  }
+
+  startInterval(): void {    
+    this.interval$ = interval(1000).pipe(take(10));
   }
 
   getCustomClassString(): string {

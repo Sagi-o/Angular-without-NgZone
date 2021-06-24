@@ -5,7 +5,7 @@ import { ApplicationRef, ChangeDetectorRef, Component, NgZone } from '@angular/c
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit, AfterViewChecked {
 
@@ -20,7 +20,7 @@ export class AppComponent implements OnInit, AfterViewChecked {
   }
 
   ngAfterViewChecked() {
-    console.warn("AppComponent - ngAfterViewChecked");
+    // console.warn("AppComponent - ngAfterViewChecked");
   }
 
   tick() {
