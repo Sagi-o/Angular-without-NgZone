@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { OutsideZoneExampleComponent } from './outside-zone-example/outside-zone-example.component';
-import { WatchExampleComponent } from './watch-example/watch-example.component';
+import { OutsideZoneExampleComponent } from './components/outside-zone-example/outside-zone-example.component';
+import { WatchExampleComponent } from './components/watch-example/watch-example.component';
 
 const routes: Routes = [
   {

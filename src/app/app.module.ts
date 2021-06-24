@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TreeComponent } from './tree/tree/tree.component';
 import { NodeComponent } from './tree/node/node.component';
-import { WatchExampleComponent } from './watch-example/watch-example.component';
-import { OutsideZoneExampleComponent } from './outside-zone-example/outside-zone-example.component';
+import { WatchExampleComponent } from './components/watch-example/watch-example.component';
+import { OutsideZoneExampleComponent } from './components/outside-zone-example/outside-zone-example.component';
 import { ZonelessEventPluginService } from './services/zoneless-event-plugin.service';
 import { WatchPipe } from './pipes/watch.pipe';
 

@@ -35,7 +35,7 @@ export class OutsideZoneExampleComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     // Remove click event listeners from buttons before using
     this.ngZone.runOutsideAngular(() => {
-      this.setupClickListeners();
+      // this.setupClickListeners();
     });
   }
 

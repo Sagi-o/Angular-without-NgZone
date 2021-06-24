@@ -1,9 +1,9 @@
-import { AfterViewChecked, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { interval, Observable, Subscription } from 'rxjs';
+import { interval, Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
-import { Watch } from '../decorators/watch.decorator';
-import { CustomClass } from '../model/custom-class.model';
+import { Watch } from '../../decorators/watch.decorator';
+import { CustomClass } from '../../model/custom-class.model';
 
 @Component({
   selector: 'app-watch-example',
